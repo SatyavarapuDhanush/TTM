@@ -1,0 +1,44 @@
+{% extends 'Navbar.html' %}
+{% load static %}
+<html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PYTZ</title>
+</head>
+<body>
+<h1>
+    {{tlogic}}
+</h1>
+{% block body %}
+<div>
+    <div class="container">
+  <div class="row">
+    <div class="col-sm-5 col-md-6">
+        <div>
+
+        {% csrf_token %}
+        <br>
+        <h1>Welcome to Dhanush's Travel Tourism and Management</h1><div class="dropdown">
+       <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" >
+        Dropdown button
+        </button>
+          <ul class="dropdown-menu" method="post" action="{% url 'tlogic' %}">
+          <li><a class="dropdown-item" href="{% url 'tlogic' %}">America/Indiana/Petersburg</a></li>
+          <li><a class="dropdown-item" href="{% url 'tlogic' %}">America/Mexico_City</a></li>
+          <li><a class="dropdown-item" href="{% url 'tlogic' %}">Asia/Kolkata</a></li>
+          </ul>
+          </div>
+        <button type="submit" name='t_value1' class="btn btn-info">SUBMIT</button>
+
+            </div>
+    </div>
+    <div class="col-sm-5 offset-sm-2 col-md-6 offset-md-0">SECOND HALF
+        <br><br><br>
+        <h1></h1>
+    {{ tlogic }}
+    </div>
+</div>
+{% endblock %}
+</body>
+</html>
